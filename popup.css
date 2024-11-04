@@ -16,6 +16,8 @@ limitations under the License.
 
 body {
   width: 20rem;
+  background: #682525;
+  color: #e7e7e7;
 }
 
 ul {
@@ -37,4 +39,15 @@ li:nth-child(even) {
 h3,
 p {
   margin: 0;
+}
+
+button {
+  background-color: #111111;
+  border: none;
+  color: #e7e7e7;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
 }
