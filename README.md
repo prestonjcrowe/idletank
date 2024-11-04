@@ -10,7 +10,7 @@ These settings can all be toggled in the options for the Chrome extension.
 - auto close modals
 - auto close toasts
 - enable f key shortcut for full screen
+- enable m key shortcut for mute
 
 ## To Do
 - auto follow most viewed room when director mode is offline
-- enable m key shortcut for mute

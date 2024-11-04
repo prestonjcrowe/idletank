@@ -3,20 +3,21 @@ let AUTO_CLOSE_TOAST = true;
 let AUTO_CLOSE_MODAL = true;
 let AUTO_DIRECTOR_MODE = true;
 let AUTO_FULLSCREEN_MODE = false;
+let AUTO_MUTE_MODE = false;
 
 // Retrieve settings and set default values
 chrome.storage.sync.get(
   {
     'auto_close_toast': true,
     'auto_close_modal': true,
-    'force_director': true,
-    'force_fullscreen': false
+    'force_fullscreen': true,
+    'force_mute': true
   },
   function (items) {
     console.log('Settings retrieved', items);
     AUTO_CLOSE_TOAST = items['auto_close_toast'];
     AUTO_CLOSE_MODAL = items['auto_close_modal'];
-    AUTO_DIRECTOR_MODE = items['force_director'];
+    AUTO_MUTE_MODE = items['force_mute'];
     AUTO_FULLSCREEN_MODE = items['force_fullscreen'];
 });
 
@@ -66,6 +67,16 @@ function force_fullscreen() {
   }
 }
 
+function toggle_mute() {
+  const mute_button = document.querySelector("button[class^='livepeer-video-player_mute']");
+  console.log(mute_button)
+
+  if (mute_button) {
+    mute_button.click();
+  }
+}
+
+
 function run() {
   if (!is_logged_in()) {
     return;
@@ -88,5 +99,8 @@ setInterval(run, INTERVAL);
 document.addEventListener("keydown", function(event) {
   if (event.code === "KeyF" && AUTO_FULLSCREEN_MODE && !is_typing_in_chat()) {
     force_fullscreen()
+  } else if (event.code === "KeyM" && AUTO_MUTE_MODE && !is_typing_in_chat()) {
+    console.log("toggling mute")
+    toggle_mute()
   }
 });

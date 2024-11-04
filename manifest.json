@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "idletank",
-  "description": "Quality of life improvements for fishtank.live designed for dedicated 24/7 streaming on a Raspberry Pi.",
+  "description": "Quality of life improvements for fishtank.live. Designed for 24/7 streaming on a Raspberry Pi.",
   "version": "1.0",
   "action": {
     "default_popup": "popup.html",
