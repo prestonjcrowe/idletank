@@ -20,6 +20,10 @@ chrome.storage.sync.get(
     AUTO_FULLSCREEN_MODE = items['force_fullscreen'];
 });
 
+function is_typing_in_chat() {
+  const chat_input = document.querySelector("#chat-input")
+  return document.activeElement === chat_input;
+}
 function is_logged_in() {
   const login_form = document.querySelector("div[class^='log-in_info']");
   return login_form === null;
@@ -82,7 +86,7 @@ function run() {
 
 setInterval(run, INTERVAL);
 document.addEventListener("keydown", function(event) {
-  if (event.code === "KeyF" && AUTO_FULLSCREEN_MODE) {
+  if (event.code === "KeyF" && AUTO_FULLSCREEN_MODE && !is_typing_in_chat()) {
     force_fullscreen()
   }
 });
