@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "idletank",
+  "description": "Quality of life improvements for fishtank.live designed for dedicated 24/7 streaming on a Raspberry Pi.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/icon-32.png"
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "run_at": "document_start",
+      "matches": [
+        "https://www.fishtank.live/",
+        "https://www.fishtank.live/*"
+      ]
+    }
+  ]
+}
