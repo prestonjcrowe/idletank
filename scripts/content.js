@@ -5,12 +5,19 @@ let AUTO_DIRECTOR_MODE = true;
 let AUTO_FULLSCREEN_MODE = false;
 
 // Retrieve settings and set default values
-chrome.storage.sync.get({'auto_close_toast': true, 'auto_close_modal': true, 'force_director': true, 'force_fullscreen': false}, function(items) {
-  console.log('Settings retrieved', items);
-  AUTO_CLOSE_TOAST = items['auto_close_toast'];
-  AUTO_CLOSE_MODAL = items['auto_close_modal'];
-  AUTO_DIRECTOR_MODE = items['force_director'];
-  AUTO_FULLSCREEN_MODE = items['force_fullscreen'];
+chrome.storage.sync.get(
+  {
+    'auto_close_toast': true,
+    'auto_close_modal': true,
+    'force_director': true,
+    'force_fullscreen': false
+  },
+  function (items) {
+    console.log('Settings retrieved', items);
+    AUTO_CLOSE_TOAST = items['auto_close_toast'];
+    AUTO_CLOSE_MODAL = items['auto_close_modal'];
+    AUTO_DIRECTOR_MODE = items['force_director'];
+    AUTO_FULLSCREEN_MODE = items['force_fullscreen'];
 });
 
 function is_logged_in() {
@@ -60,7 +67,7 @@ function run() {
     return;
   }
 
-  if (AUTO_CLOSE_TOAST) { 
+  if (AUTO_CLOSE_TOAST) {
     close_toast();
   }
 
