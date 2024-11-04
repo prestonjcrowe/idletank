@@ -5,9 +5,17 @@
   </head>
   <body>
     <h2>idletank</h2>
-    <div>Tools for lazy fish enthusiasts.</div>
+    <div>quality of life improvements for fishtank.live</div>
     <br>
-    <button id="go-to-options">Options</button>
-    <script src="popup.js"></script>
+
+    <input type="checkbox" id="close_modal" name="close_modal" value="Modal">
+    <label for="close_modal">Auto Close Modal</label><br>
+    <input type="checkbox" id="close_toast" name="close_toast" value="Toast">
+    <label for="close_toast">Auto Close Toast</label><br>
+    <!-- <input type="checkbox" id="force_director" name="force_director" value="Director">
+    <label for="force_director">Force Director Mode</label><br> -->
+    <input type="checkbox" id="force_fullscreen" name="force_fullscreen" value="Fullscreen">
+    <label for="force_fullscreen">Enable F Key For Fullscreen</label><br>
+    <script src="options.js"></script>
   </body>
 </html>

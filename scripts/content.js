@@ -49,7 +49,7 @@ function close_toast() {
   }
 }
 
-function enable_fullscreen() {
+function force_fullscreen() {
   const video = document.querySelector('video');
   if (!document.fullscreenElement && video) {
     if (video.requestFullscreen) {
@@ -76,12 +76,13 @@ function run() {
   }
 
   if (AUTO_DIRECTOR_MODE) {
-    enable_director_mode();
-  }
-
-  if (AUTO_FULLSCREEN_MODE) {
-    enable_fullscreen();
+    // enable_director_mode();
   }
 }
 
 setInterval(run, INTERVAL);
+document.addEventListener("keydown", function(event) {
+  if (event.code === "KeyF" && AUTO_FULLSCREEN_MODE) {
+    force_fullscreen()
+  }
+});

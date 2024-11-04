@@ -18,6 +18,7 @@ body {
   width: 20rem;
   background: #682525;
   color: #e7e7e7;
+  padding: 8px;
 }
 
 ul {
@@ -55,4 +56,13 @@ button {
 button:hover {
   background-color: #1f1f1f;
   cursor: pointer;
+}
+
+a {
+  color: #e7e7e7;
+  /* text-decoration: none; */
+}
+
+a:hover {
+  color: white;
 }
