@@ -13,3 +13,4 @@ These settings can all be toggled in the options for the Chrome extension.
 
 ## To Do
 - auto follow most viewed room when director mode is offline
+- enable m key shortcut for mute
